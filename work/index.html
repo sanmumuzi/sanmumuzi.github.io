@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="三木在 Github 上的个人博客">
-    <meta name="keyword" content="undefined">
+    <meta name="keyword" content="null">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="shortcut icon" href="http://p1.music.126.net/Yu0y-gqBJqXBvLCNvf7HcA==/3444769938973195.jpg">
     <link rel="alternate" type="application/atom+xml" title="sanmu" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
@@ -80,7 +80,7 @@
                         
 							
                         <li>
-                            <a href="/work/">work</a>
+                            <a href="/tags/">tags</a>
                         </li>
 							
 						
@@ -88,7 +88,7 @@
                         
 							
                         <li>
-                            <a href="/tags/">tags</a>
+                            <a href="/work/">work</a>
                         </li>
 							
 						
@@ -132,41 +132,165 @@
 
 <!-- Main Content -->
 <style>
-    .intro-header .site-heading {
-        margin: 50px;
+    * {
+        /*border: thin red solid;*/
+    }
+
+    header .bg-header {
+        height: 560px;
+        background-color: #62A4FF;
+    }
+
+    /*头像*/
+    .bg-header .avatar img {
+        border-radius: 50%;
+        margin-top: 100px;
+        max-width: 170px;
+    }
+
+    .bg-header h1,
+    .bg-header h2 {
+        color: white;
+    }
+
+    /*姓名*/
+    .bg-header h1 {
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px rgba(15, 15, 15, .3);
+    }
+
+    /*描述*/
+    .bg-header h2 {
+        font-size: 18px;
+        margin-top: 12px;
+    }
+
+    /*整个作品展示区*/
+    section .works-area {
+        margin-top: -150px;
+    }
+
+    .works-area .works-item {
+        border-radius: 2px;
+        border: 1px solid #eee8d5;
+        margin-bottom: 50px;
+        box-shadow: 8px 5px 10px rgba(0, 0, 0, .2);
+    }
+
+    .works-item-img {
+        margin: auto -26px;
+    }
+
+    .works-item-img img {
+        width: 100%;
+    }
+
+    .works-area .works-item {
+        background: white;
+        padding: 5px 25px;
+    }
+
+    .works-area .footer {
+        padding-top: 10px;
+        border-top: thin #eee solid;
+    }
+
+    .works-area .footer .btn {
+        padding: 7px 9px;
+        border-radius: 2px;
+        float: right;
+        margin: 8px 0;
+        text-transform: none;
+        font-size: 12px;
+        font-style: italic;
+        background: #0085a1;
+        border: none;
+        color: #fff;
+    }
+
+    .works-item .works-content {
+        padding-top: 15px;
+    }
+
+    .works-item .title {
+        padding-top: 6px;
+    }
+
+    .works-item .title h3 {
+        display: inline-block;
+        margin: 0 15px;
+        height: 33px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .works-item .title .title-date {
+        float: right;
+        font-size: 18px;
+    }
+
+    .works-item .use span {
+        display: inline-block;
+        font-size: 12px;
+        border-radius: 3px;
+        padding: 0 4px;
+        border: thin solid #795548;
+    }
+
+    .works-item .subtitle {
+        margin: 0;
+        font-size: 17px;
+    }
+
+    @media screen and (max-width: 400px) {
+        .works-item .footer .use {
+            font-size: 14px;
+        }
+
+        .works-item .works-item-img {
+            height: 200px;
+        }
+
+        .bg-header .avatar img {
+            max-width: 150px;
+        }
+
+        .bg-header h1 {
+            font-size: 24px;
+        }
+
+        section .works-area {
+            margin-top: -210px;
+        }
     }
 </style>
 
-<!-- Page Header -->
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading text-center">
-                    <h1>work</h1>
-                    <span class="subheading"></span>
+<div class="works-container" style="background-color: #fafafa">
+    <header>
+        <div class="bg-header text-center">
+            <div class="profile">
+                <div class="avatar">
+                    <img src="http://p1.music.126.net/Yu0y-gqBJqXBvLCNvf7HcA==/3444769938973195.jpg">
+                </div>
+                <div class="personal-profile">
+                    <h1>
+                        sanmu
+                    </h1>
+                    <h2>个人作品集</h2>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-            <div id='tag_cloud' class="tags">
+    </header>
+    <div class="container">
+        <section class="row">
+            <div class="col-sm-10 col-sm-offset-1
+                        col-md-8 col-md-offset-2
+                      works-area">
                 
             </div>
-
-            <!-- 标签列表 -->
-            
-
-        </div>
+        </section>
     </div>
 </div>
-
 <!-- Footer -->
 <!-- Footer -->
 <footer>
@@ -178,38 +302,11 @@
                 
                 
                 
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/li-lin-wei-94-44/activities">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                
-
-                
-                    <li>
-                        <a target="_blank" href="http://weibo.com/u/5181147873">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
 
                 
 
                 
-                    <li>
-                        <a target="_blank"  href="https://github.com/sanmumuzi">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
+
                 
 
                 
