@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="三木在 Github 上的个人博客">
+    <meta name="keyword" content="null">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="http://p1.music.126.net/Yu0y-gqBJqXBvLCNvf7HcA==/3444769938973195.jpg">
+    <link rel="alternate" type="application/atom+xml" title="sanmu" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        Learn Docker｜sanmu&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2017/04/16/Learn-Docker/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('http://imgsrc.baidu.com/forum/cp%3Dtieba%2C10%2C688%3Bap%3D%C8%FD%C4%BE%D0%A1%BC%D2%D7%E5%B0%C9%2C90%2C696/sign=0ddac57c922bd407568adbb912ecfc30/66c665f1f736afc37dcf6431b619ebc4b6451228.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    sanmu
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/tags/">tags</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/work/">work</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://imgsrc.baidu.com/forum/pic/item/d73ecda30cf431ad9827e3d44236acaf2cdd98f4.jpg#博文默认的图片">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://imgsrc.baidu.com/forum/pic/item/d73ecda30cf431ad9827e3d44236acaf2cdd98f4.jpg#博文默认的图片')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>Learn Docker</h1>
+                    
+                    <span class="meta">
+                         作者 sanmu
+                        <span>
+                          日期 2017-04-16
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#computer science"
+                           title="computer science">computer science</a>
+                        
+                        <a class="tag" href="/tags/#docker"
+                           title="docker">docker</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            Learn Docker
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="docker学习笔记"><a href="#docker学习笔记" class="headerlink" title="docker学习笔记"></a>docker学习笔记</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="镜像（Image）"><a href="#镜像（Image）" class="headerlink" title="镜像（Image）"></a>镜像（Image）</h3><h3 id="容器（Container）"><a href="#容器（Container）" class="headerlink" title="容器（Container）"></a>容器（Container）</h3><blockquote>
+<p>镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的类和实例一样，镜像是静态的定义，容器是镜像运行时的实体。</p>
+<p>每一个容器运行时，是以镜像为基础层，在其上创建一个当前容器的存储层，我们可以称这个为容器运行时读写而准备的存储层为容器存储层。</p>
+<p>容器消亡时，容区存储层也随之消亡。</p>
+<p>所有的文件写入操作，都应该使用数据卷（Volume）</p>
+</blockquote>
+<h3 id="仓库（Repository）"><a href="#仓库（Repository）" class="headerlink" title="仓库（Repository）"></a>仓库（Repository）</h3><h2 id="安装Docker-此下均为ubuntu16-04安装"><a href="#安装Docker-此下均为ubuntu16-04安装" class="headerlink" title="安装Docker(此下均为ubuntu16.04安装)"></a>安装Docker(此下均为ubuntu16.04安装)</h2><h3 id="阿里云的安装脚本"><a href="#阿里云的安装脚本" class="headerlink" title="阿里云的安装脚本"></a>阿里云的安装脚本</h3><blockquote>
+<p>curl    -sSL    <a href="http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/" target="_blank" rel="external">http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/</a> docker-engine/internet    |    sh    </p>
+</blockquote>
+<h3 id="添加APT镜像源"><a href="#添加APT镜像源" class="headerlink" title="添加APT镜像源"></a>添加APT镜像源</h3><blockquote>
+<p>$    sudo    apt-get    update </p>
+<p>$    sudo    apt-get    install    apt-transport-https    ca-certificate</p>
+<p>为了确认所下载软件包的合法性，需要添加    Docker    官方软件源的    GPG    密钥</p>
+<p>$    sudo    apt-key    adv    –keyserver    hkp://p80.pool.sks-keyservers.net :80    –recv-keys    58118E89F3A912897C070ADBF76221572C52609D</p>
+<p>向source.list 中添加Docker软件源</p>
+<p>Xenial    16.04 (LTS)<br>    deb    <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a>    ubuntuxenial    main<br><strong>为下面的REPO</strong></p>
+<p>$    echo    “REPO”    |    sudo    tee    /etc/apt/sources.list.d/docker.list</p>
+<p>添加成功后，更新apt软件包缓存</p>
+<p>$    sudo    apt-get    update</p>
+</blockquote>
+<h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><blockquote>
+<p>$    sudo    apt-get    install    docker-engine</p>
+</blockquote>
+<h3 id="启动Docker引擎"><a href="#启动Docker引擎" class="headerlink" title="启动Docker引擎"></a>启动Docker引擎</h3><blockquote>
+<p>$    sudo    systemctl    enable    docker $    sudo    systemctl    start    docker</p>
+<p>建立Docker用户组</p>
+<p>$    sudo    groupadd    docker</p>
+<p>$    sudo    usermod    -aG    docker    <strong>$username</strong></p>
+</blockquote>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="docker-ps-a"><a href="#docker-ps-a" class="headerlink" title="docker ps (-a)"></a>docker ps (-a)</h3><blockquote>
+<p>查看正在运行(所有)docker容器</p>
+</blockquote>
+<h3 id="docker-rm-容器名"><a href="#docker-rm-容器名" class="headerlink" title="docker rm 容器名"></a>docker rm 容器名</h3><blockquote>
+<p>删除某个容器</p>
+</blockquote>
+<h3 id="docker-rmi-镜像名"><a href="#docker-rmi-镜像名" class="headerlink" title="docker rmi 镜像名"></a>docker rmi 镜像名</h3><blockquote>
+<p>删除某个镜像</p>
+</blockquote>
+<h3 id="docker-pull-选项-地址-仓库名-标签"><a href="#docker-pull-选项-地址-仓库名-标签" class="headerlink" title="docker pull {选项} 地址 仓库名:标签"></a>docker pull {选项} 地址 仓库名:标签</h3><blockquote>
+<p>获取镜像</p>
+<p>eg: docker pull ubuntu:14.04<br>(默认地址是Docker Hub, 默认为官方镜像)</p>
+</blockquote>
+<h3 id="docker-run-it-–rm-ubuntu-14-04-bash"><a href="#docker-run-it-–rm-ubuntu-14-04-bash" class="headerlink" title="docker run -it –rm ubuntu:14.04 bash"></a>docker run -it –rm ubuntu:14.04 bash</h3><blockquote>
+<p>以镜像为基础启动一个容器来运行</p>
+<p>启动其中的bash并进行交互式操作</p>
+<p>-it <strong>-i</strong>:交互式操作，<strong>-t</strong>:终端</p>
+<p>–rm 容器退出后随之将其删除</p>
+<p>ubuntu:14.04 用该镜像为基础启动容器</p>
+<p>bash 交互式终端</p>
+</blockquote>
+<h3 id="docker-images-列出镜像"><a href="#docker-images-列出镜像" class="headerlink" title="docker images (列出镜像)"></a>docker images (列出镜像)</h3><h3 id="docker-images-f-dangling-true-显示虚悬镜像（dangling-image）"><a href="#docker-images-f-dangling-true-显示虚悬镜像（dangling-image）" class="headerlink" title="docker images -f dangling=true (显示虚悬镜像（dangling image）)"></a>docker images -f dangling=true (显示虚悬镜像（dangling image）)</h3><h3 id="docker-rmi-docker-images-q-f-dangling-true-删除虚悬镜像"><a href="#docker-rmi-docker-images-q-f-dangling-true-删除虚悬镜像" class="headerlink" title="docker rmi $(docker images -q -f dangling=true) (删除虚悬镜像)"></a>docker rmi $(docker images -q -f dangling=true) (删除虚悬镜像)</h3><h3 id="docker-images-a-（显示所有镜像（包括中间层镜像））"><a href="#docker-images-a-（显示所有镜像（包括中间层镜像））" class="headerlink" title="docker images -a （显示所有镜像（包括中间层镜像））"></a>docker images -a （显示所有镜像（包括中间层镜像））</h3><h3 id="docker-images-ubuntu-列出部分镜像"><a href="#docker-images-ubuntu-列出部分镜像" class="headerlink" title="docker images ubuntu (列出部分镜像)"></a>docker images ubuntu (列出部分镜像)</h3><h3 id="docker-iamges-q-只显示ID号"><a href="#docker-iamges-q-只显示ID号" class="headerlink" title="docker iamges -q (只显示ID号)"></a>docker iamges -q (只显示ID号)</h3><h3 id="docker-run-–name-webserver-d-p-80-80-nginx"><a href="#docker-run-–name-webserver-d-p-80-80-nginx" class="headerlink" title="docker run –name webserver -d -p 80:80 nginx"></a>docker run –name webserver -d -p 80:80 nginx</h3><blockquote>
+<p>使用nginx镜像启动一个容器，命名为webserver，映射80端口(前面的数字)。</p>
+<p>当使用docker run 来创建容器时，Docker 在后台进行的标准操作包括：</p>
+</blockquote>
+<ul>
+<li>检查本地是否存在指定的镜像，不存在就从公有仓库下载</li>
+<li>利用镜像创建并启动一个容器 </li>
+<li>分配一个文件系统，并在只读的镜像层外面挂载一层可读写层 </li>
+<li>从宿主主机配置的网桥接口中桥接一个虚拟接口到容器中去 </li>
+<li>从地址池配置一个ip地址给容器 </li>
+<li>执行用户指定的应用程序 </li>
+<li>执行完毕后容器被终止</li>
+</ul>
+<h3 id="docker-exec-it-webserver-bash-进入名为webserver的容器"><a href="#docker-exec-it-webserver-bash-进入名为webserver的容器" class="headerlink" title="docker exec -it webserver bash      (进入名为webserver的容器)"></a>docker exec -it webserver bash      (进入名为webserver的容器)</h3><h3 id="docker-diff-webserver-查看具体的改动"><a href="#docker-diff-webserver-查看具体的改动" class="headerlink" title="docker diff webserver (查看具体的改动)"></a>docker diff webserver (查看具体的改动)</h3><h3 id="docker-commit-–author-“作者名”-–message-“提示信息”-容器名-（-依据镜像）"><a href="#docker-commit-–author-“作者名”-–message-“提示信息”-容器名-（-依据镜像）" class="headerlink" title="docker commit –author “作者名” –message “提示信息” (容器名) （ 依据镜像）"></a>docker commit –author “作者名” –message “提示信息” (容器名) （ 依据镜像）</h3><h3 id="docker-history-容器名"><a href="#docker-history-容器名" class="headerlink" title="docker history (容器名)"></a>docker history (容器名)</h3><blockquote>
+<p><strong>eg:</strong> docker history nginx:v2</p>
+</blockquote>
+<h3 id="docker-start-容器名-（启动已终止容器）"><a href="#docker-start-容器名-（启动已终止容器）" class="headerlink" title="docker start (容器名) （启动已终止容器）"></a>docker start (容器名) （启动已终止容器）</h3><h3 id="docker-run-d-ubuntu-14-04-（-d参数，后台运行）"><a href="#docker-run-d-ubuntu-14-04-（-d参数，后台运行）" class="headerlink" title="docker run -d ubuntu:14.04 （-d参数，后台运行）"></a>docker run -d ubuntu:14.04 （-d参数，后台运行）</h3><h3 id="docker-logs-container-ID-or-NAMES-（获取容器的输出信息）"><a href="#docker-logs-container-ID-or-NAMES-（获取容器的输出信息）" class="headerlink" title="docker logs [container ID or NAMES] （获取容器的输出信息）"></a>docker logs [container ID or NAMES] （获取容器的输出信息）</h3><h3 id="docker-stop-container-ID-or-NAMES-（终止容器）"><a href="#docker-stop-container-ID-or-NAMES-（终止容器）" class="headerlink" title="docker stop [container ID or NAMES] （终止容器）"></a>docker stop [container ID or NAMES] （终止容器）</h3><h3 id="docker-restart-container-ID-or-NAMES-（将一个运行态的容器终止，然后重新启动它）"><a href="#docker-restart-container-ID-or-NAMES-（将一个运行态的容器终止，然后重新启动它）" class="headerlink" title="docker restart [container ID or NAMES] （将一个运行态的容器终止，然后重新启动它）"></a>docker restart [container ID or NAMES] （将一个运行态的容器终止，然后重新启动它）</h3>
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/04/15/Computer-Network/" data-toggle="tooltip" data-placement="top"
+                           title="Computer Network">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker学习笔记"><span class="toc-text">docker学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#镜像（Image）"><span class="toc-text">镜像（Image）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器（Container）"><span class="toc-text">容器（Container）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库（Repository）"><span class="toc-text">仓库（Repository）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Docker-此下均为ubuntu16-04安装"><span class="toc-text">安装Docker(此下均为ubuntu16.04安装)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#阿里云的安装脚本"><span class="toc-text">阿里云的安装脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加APT镜像源"><span class="toc-text">添加APT镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Docker"><span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动Docker引擎"><span class="toc-text">启动Docker引擎</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-ps-a"><span class="toc-text">docker ps (-a)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-rm-容器名"><span class="toc-text">docker rm 容器名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-rmi-镜像名"><span class="toc-text">docker rmi 镜像名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-pull-选项-地址-仓库名-标签"><span class="toc-text">docker pull {选项} 地址 仓库名:标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run-it-–rm-ubuntu-14-04-bash"><span class="toc-text">docker run -it –rm ubuntu:14.04 bash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-images-列出镜像"><span class="toc-text">docker images (列出镜像)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-images-f-dangling-true-显示虚悬镜像（dangling-image）"><span class="toc-text">docker images -f dangling=true (显示虚悬镜像（dangling image）)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-rmi-docker-images-q-f-dangling-true-删除虚悬镜像"><span class="toc-text">docker rmi $(docker images -q -f dangling=true) (删除虚悬镜像)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-images-a-（显示所有镜像（包括中间层镜像））"><span class="toc-text">docker images -a （显示所有镜像（包括中间层镜像））</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-images-ubuntu-列出部分镜像"><span class="toc-text">docker images ubuntu (列出部分镜像)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-iamges-q-只显示ID号"><span class="toc-text">docker iamges -q (只显示ID号)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run-–name-webserver-d-p-80-80-nginx"><span class="toc-text">docker run –name webserver -d -p 80:80 nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-exec-it-webserver-bash-进入名为webserver的容器"><span class="toc-text">docker exec -it webserver bash      (进入名为webserver的容器)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-diff-webserver-查看具体的改动"><span class="toc-text">docker diff webserver (查看具体的改动)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-commit-–author-“作者名”-–message-“提示信息”-容器名-（-依据镜像）"><span class="toc-text">docker commit –author “作者名” –message “提示信息” (容器名) （ 依据镜像）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-history-容器名"><span class="toc-text">docker history (容器名)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-start-容器名-（启动已终止容器）"><span class="toc-text">docker start (容器名) （启动已终止容器）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run-d-ubuntu-14-04-（-d参数，后台运行）"><span class="toc-text">docker run -d ubuntu:14.04 （-d参数，后台运行）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-logs-container-ID-or-NAMES-（获取容器的输出信息）"><span class="toc-text">docker logs [container ID or NAMES] （获取容器的输出信息）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-stop-container-ID-or-NAMES-（终止容器）"><span class="toc-text">docker stop [container ID or NAMES] （终止容器）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-restart-container-ID-or-NAMES-（将一个运行态的容器终止，然后重新启动它）"><span class="toc-text">docker restart [container ID or NAMES] （将一个运行态的容器终止，然后重新启动它）</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#computer science"
+                           title="computer science">computer science</a>
+                        
+                        <a class="tag" href="/tags/#docker"
+                           title="docker">docker</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://x-thon.matsuyoi.com">社会，社会</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; sanmu 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','undefined','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="http://p1.music.126.net/Yu0y-gqBJqXBvLCNvf7HcA==/3444769938973195.jpg">
+</body>
+
+</html>
