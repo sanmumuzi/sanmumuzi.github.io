@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Hello World｜sanmu&#39;s blog
+        Scrapy｜sanmu&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2017/03/25/hello-world/">
+    <link rel="canonical" href="http://yoursite.com/2017/04/26/Scrapy/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -153,18 +153,24 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Hello World</h1>
+                    <h1>Scrapy</h1>
                     
                     <span class="meta">
                          作者 sanmu
                         <span>
-                          日期 2017-03-25
+                          日期 2017-04-26
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#你好，世界！"
-                           title="你好，世界！">你好，世界！</a>
+                        <a class="tag" href="/tags/#computer science"
+                           title="computer science">computer science</a>
+                        
+                        <a class="tag" href="/tags/#scrapy"
+                           title="scrapy">scrapy</a>
+                        
+                        <a class="tag" href="/tags/#commands"
+                           title="commands">commands</a>
                         
                     </div>
                 </div>
@@ -173,7 +179,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Hello World
+            Scrapy
         </span>
     </div>
 </header>
@@ -184,26 +190,37 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+                <h1 id="scrapy基本使用"><a href="#scrapy基本使用" class="headerlink" title="scrapy基本使用"></a>scrapy基本使用</h1><h2 id="common-commands"><a href="#common-commands" class="headerlink" title="common commands"></a>common commands</h2><h3 id="新建一个爬虫工程"><a href="#新建一个爬虫工程" class="headerlink" title="新建一个爬虫工程"></a>新建一个爬虫工程</h3><blockquote>
+<p>scrapy startproject XXX</p>
+</blockquote>
+<h3 id="新建一个初始爬虫"><a href="#新建一个初始爬虫" class="headerlink" title="新建一个初始爬虫"></a>新建一个初始爬虫</h3><blockquote>
+<p>scrapy genspider [options] name domain</p>
+</blockquote>
+<h3 id="列出当前工程内所有爬虫"><a href="#列出当前工程内所有爬虫" class="headerlink" title="列出当前工程内所有爬虫"></a>列出当前工程内所有爬虫</h3><blockquote>
+<p>scrapy list</p>
+</blockquote>
+<h3 id="scrapy-shell"><a href="#scrapy-shell" class="headerlink" title="scrapy shell"></a>scrapy shell</h3><blockquote>
+<p>scrapy shell (url)</p>
+<p>shelp()——查看帮助</p>
+</blockquote>
+<h2 id="scrapyd"><a href="#scrapyd" class="headerlink" title="scrapyd"></a>scrapyd</h2><h3 id="部署爬虫"><a href="#部署爬虫" class="headerlink" title="部署爬虫"></a>部署爬虫</h3><blockquote>
+<p>vim scrapy.cfg(修改配置)</p>
+<p>scrapyd-deploy 工程配置名 -p 工程名</p>
+</blockquote>
+<h3 id="schedule-调度"><a href="#schedule-调度" class="headerlink" title="schedule(调度)"></a>schedule(调度)</h3><blockquote>
+<p>curl <a href="http://host:port/schedule.json" target="_blank" rel="external">http://host:port/schedule.json</a> -d project=工程名 -d spider=爬虫名</p>
+</blockquote>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2017/03/31/Computer-terminology-one/" data-toggle="tooltip" data-placement="top"
-                           title="Computer Terminology-one">&larr; Previous Post</a>
-                    </li>
                     
+                    <li class="next">
+                        <a href="/2017/04/16/Learn-Docker/" data-toggle="tooltip" data-placement="top"
+                           title="Learn Docker">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -215,7 +232,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#scrapy基本使用"><span class="toc-text">scrapy基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#common-commands"><span class="toc-text">common commands</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个爬虫工程"><span class="toc-text">新建一个爬虫工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个初始爬虫"><span class="toc-text">新建一个初始爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出当前工程内所有爬虫"><span class="toc-text">列出当前工程内所有爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scrapy-shell"><span class="toc-text">scrapy shell</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scrapyd"><span class="toc-text">scrapyd</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署爬虫"><span class="toc-text">部署爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#schedule-调度"><span class="toc-text">schedule(调度)</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -237,8 +254,14 @@
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#你好，世界！"
-                           title="你好，世界！">你好，世界！</a>
+                        <a class="tag" href="/tags/#computer science"
+                           title="computer science">computer science</a>
+                        
+                        <a class="tag" href="/tags/#scrapy"
+                           title="scrapy">scrapy</a>
+                        
+                        <a class="tag" href="/tags/#commands"
+                           title="commands">commands</a>
                         
                     </div>
                 </section>
